@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 FROM ubuntu:14.02
-MAINTAINER Nilesh 'nnilesh7756@gmail.com'
+
 =======
 FROM nilesh7756/puppetserver-docker:1.0
 >>>>>>> f3443b888fb7195091bb9ec7745a9882cacde437
