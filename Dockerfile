@@ -1,4 +1,4 @@
-FROM nilesh7756/puppetserver-docker:1.0
+FROM ubuntu:14.02
 MAINTAINER Nilesh 'nnilesh7756@gmail.com'
 
 ENV PUPPET_SERVER_VERSION="2.6.0" DUMB_INIT_VERSION="1.0.2" UBUNTU_CODENAME="xenial" PUPPETSERVER_JAVA_ARGS="-Xms256m -Xmx256m" PATH=/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
@@ -21,8 +21,6 @@ RUN puppet config set autosign true --section master
 
 VOLUME /etc/puppetlabs/code/
 
-COPY site.pp /etc/puppetlabs/code/environments/production/manifests/site.pp
-
 COPY docker-entrypoint.sh /
 
 EXPOSE 8140
@@ -30,8 +28,6 @@ EXPOSE 8140
 ENTRYPOINT ["dumb-init", "/docker-entrypoint.sh"]
 
 CMD ["foreground" ]
-
-RUN puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp
 
 COPY Dockerfile /
 
