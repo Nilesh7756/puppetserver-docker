@@ -1,5 +1,4 @@
 FROM nilesh7756/puppetserver-docker:1.0
-MAINTAINER Nilesh 'nnilesh7756@gmail.com'
 
 ENV PUPPET_SERVER_VERSION="2.6.0" DUMB_INIT_VERSION="1.0.2" UBUNTU_CODENAME="xenial" PUPPETSERVER_JAVA_ARGS="-Xms256m -Xmx256m" PATH=/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
 
